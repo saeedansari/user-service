@@ -1,0 +1,16 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        default_schema: userservice
+        format_sql: true
+        generate_statistics: false
+    show-sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5433/user-service
+    username: postgres
+    password: password
+
+server:
+  servlet:
+    context-path: /user-service
