@@ -12,6 +12,7 @@
   <properties>
     <apache.text.version>1.4</apache.text.version>
     <apache.rng.version>1.0</apache.rng.version>
+    <flyway.version>5.1.4</flyway.version>
     <gmaven.version>1.6.1</gmaven.version>
     <lombok.version>1.16.20</lombok.version>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -85,6 +86,12 @@
       <scope>test</scope>
     </dependency>
 
+    <dependency>
+      <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-core</artifactId>
+      <version>${flyway.version}</version>
+    </dependency>
+
 
   </dependencies>
 
@@ -92,6 +99,21 @@
   <build>
 
     <plugins>
+
+      <plugin>
+        <groupId>org.flywaydb</groupId>
+        <artifactId>flyway-maven-plugin</artifactId>
+        <version>${flyway.version}</version>
+        <configuration>
+          <url>jdbc:postgresql://localhost:5433/user-service</url>
+          <user>postgres</user>
+          <password>password</password>
+          <schemas>
+            <schema>userservice</schema>
+          </schemas>
+        </configuration>
+      </plugin>
+
       <plugin>
         <groupId>org.codehaus.gmavenplus</groupId>
         <artifactId>gmavenplus-plugin</artifactId>
@@ -115,6 +137,25 @@
             <include>**/*Spec.java</include>
           </includes>
         </configuration>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <compilerArgument>-Xlint:all</compilerArgument>
+          <showWarnings>true</showWarnings>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>compile</phase>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
 
     </plugins>
