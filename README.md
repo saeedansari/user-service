@@ -32,7 +32,8 @@ Now initiate your database with Flyway:
  
  `mvn compile flyway:migrate`
 
-
+# Run Service
+ `mvn spring-boot:run`
 
 
 
