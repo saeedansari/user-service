@@ -1,9 +1,9 @@
-#User Service
+# User Service
 
 This service is a sample service for making CRUD on person resources
 
 
-#Tools
+# Tools
 
 This service is developed using following tools and frameworks:
 - Spring Boot
