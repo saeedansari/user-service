@@ -32,8 +32,15 @@ Now initiate your database with Flyway:
  
  `mvn compile flyway:migrate`
 
-# Run Service
+then run service like below
  `mvn spring-boot:run`
+ 
+# URIs
+- GET /user-service/people : returns all persons by pagination
+- GET /user-service/people/{id} : returns person by id
+- POST /user-service/people : creates person
+- DELETE /user-service/people/{id} : deletes person by id
+
 
 
 
