@@ -6,11 +6,18 @@ spring:
         format_sql: true
         generate_statistics: false
     show-sql: true
+    hibernate:
+      ddl-auto: validate
   datasource:
     url: jdbc:postgresql://localhost:5433/user-service
     username: postgres
     password: password
 
+
 server:
   servlet:
     context-path: /user-service
+
+spring:
+  flyway:
+    baselineOnMigrate: true
