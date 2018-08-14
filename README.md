@@ -36,10 +36,12 @@ then run service like below
  `mvn spring-boot:run`
  
 # URIs
-- GET /user-service/people : returns all persons by pagination
-- GET /user-service/people/{id} : returns person by id
-- POST /user-service/people : creates person
-- DELETE /user-service/people/{id} : deletes person by id
+
+- GET /user-service/people?page={page}&size={size} : Returns all persons by pagination
+- GET /user-service/people/{id} : Returns person by id
+- POST /user-service/people : Creates person
+- DELETE /user-service/people/{id} : Deletes person by id
+- PUT /user-service/people/{id} : Update person by id
 
 
 
