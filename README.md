@@ -1,9 +1,9 @@
-#User Service
+# User Service
 
 This service is a sample service for making CRUD on person resources
 
 
-#Tools
+# Tools
 
 This service is developed using following tools and frameworks:
 - Spring Boot
@@ -32,6 +32,14 @@ Now initiate your database with Flyway:
  
  `mvn compile flyway:migrate`
 
+then run service like below
+ `mvn spring-boot:run`
+ 
+# URIs
+- GET /user-service/people : returns all persons by pagination
+- GET /user-service/people/{id} : returns person by id
+- POST /user-service/people : creates person
+- DELETE /user-service/people/{id} : deletes person by id
 
 
 
