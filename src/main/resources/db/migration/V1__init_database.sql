@@ -11,6 +11,8 @@ CREATE TABLE IF  NOT EXISTS person (
   email character varying (30) unique not null
 );
 
+CREATE UNIQUE INDEX idx_person_id on person (person_id);
+
 
 
 
