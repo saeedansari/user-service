@@ -33,6 +33,7 @@ Now initiate your database with Flyway:
  `mvn compile flyway:migrate`
 
 then run service like below
+
  `mvn spring-boot:run`
  
 # URIs
